@@ -26,12 +26,12 @@ const productos = [
     categoria: 'lomitos',
   },
   {
-    titulo: 'Pizza Especial',
+    titulo: 'Pollo al Spiedo con Papas Rústicas',
     etiqueta: 'Casero',
-    descripcion: 'Morrón, mozzarella y aceitunas.',
+    descripcion: 'Pollo dorado a fuego lento bien sazonado, acompañado con papas rústicas al romero.',
     etiquetaPrecio: 'Precio total',
     precio: '$ 9.500',
-    categoria: 'pizzas',
+    categoria: 'pollos',
   },
   {
     titulo: 'Milanesa Napolitana con Guarnición',
@@ -39,7 +39,7 @@ const productos = [
     descripcion: 'Milanesa crocante con salsa, jamón, queso y papas fritas.',
     etiquetaPrecio: 'Precio total',
     precio: '$ 7.800',
-    categoria: 'carnes',
+    categoria: 'minutas',
   },
 ];
 
@@ -80,7 +80,7 @@ function actualizarCatalogo() {
     if (textoEtiqueta) textoEtiqueta.textContent = producto.etiqueta;
 
     if (enlaceWhatsApp) {
-      const mensaje = `Hola me gustaría pedir ${producto.titulo}`;
+      const mensaje = `Hola, me gustaría pedir ${producto.titulo}. Precio: ${producto.precio}.`;
       enlaceWhatsApp.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
       enlaceWhatsApp.setAttribute('aria-label', `Pedir ${producto.titulo} por WhatsApp`);
     }

@@ -1,17 +1,17 @@
 :root {
-  --bg: #fdf3a8;
-  --panel: #fff8cf;
-  --panel-strong: #f3e7a3;
-  --card: #fffbea;
-  --orange: #7a3514;
-  --orange-dark: #5a2e12;
-  --orange-soft: #f8edb4;
-  --green: #795414;
-  --green-soft: #fff8cf;
-  --text: #2a2019;
-  --text-soft: #584a31;
-  --border: rgba(89, 68, 20, 0.18);
-  --shadow: 0 20px 42px rgba(89, 68, 20, 0.14);
+  --bg: #fff8ee;
+  --panel: #fff8ee;
+  --panel-strong: #f4a261;
+  --card: #fff8ee;
+  --orange: #c0392b;
+  --orange-dark: #3b2a20;
+  --orange-soft: #f4a261;
+  --green: #c0392b;
+  --green-soft: #fff8ee;
+  --text: #3b2a20;
+  --text-soft: #5d4638;
+  --border: rgba(59, 42, 32, 0.18);
+  --shadow: 0 20px 42px rgba(59, 42, 32, 0.14);
 }
 
 * {
@@ -26,13 +26,13 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: "Inter", sans-serif;
-  background: #fdf3a8 !important;
+  background: #fff8ee !important;
   color: var(--text);
 }
 
 html,
 .bg-surface {
-  background: #fdf3a8 !important;
+  background: #fff8ee !important;
 }
 
 img {
@@ -49,8 +49,8 @@ a {
   width: min(1200px, 92vw);
   margin: 40px auto;
   padding: 18px;
-  background: #fdf3a8;
-  border: 1px solid rgba(89, 48, 22, 0.08);
+  background: #fff8ee;
+  border: 1px solid rgba(59, 42, 32, 0.08);
   border-radius: 28px;
   box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
@@ -61,7 +61,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background: linear-gradient(135deg, #fffaf6, #f8efe9);
+  background: linear-gradient(135deg, #fff8ee, #f8e8d8);
   border: 1px solid var(--border);
   border-radius: 22px;
   padding: 18px 22px;
@@ -77,7 +77,7 @@ a {
   width: 54px;
   height: 54px;
   border-radius: 16px;
-  background: linear-gradient(135deg, var(--orange), #efb36b);
+  background: linear-gradient(135deg, var(--orange), #f4a261);
   color: white;
   font-weight: 800;
   display: grid;
@@ -106,7 +106,7 @@ h1 {
   gap: 8px;
   background: var(--green-soft);
   color: var(--green);
-  border: 1px solid rgba(62, 125, 93, 0.18);
+  border: 1px solid rgba(192, 57, 43, 0.18);
   padding: 10px 16px;
   border-radius: 999px;
   font-weight: 800;
@@ -118,7 +118,7 @@ h1 {
   height: 10px;
   border-radius: 50%;
   background: var(--green);
-  box-shadow: 0 0 0 4px rgba(62, 125, 93, 0.12);
+  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.12);
 }
 
 .catalog {
@@ -130,7 +130,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  background: linear-gradient(135deg, #fffdf9 0%, #f8eadc 100%);
+  background: linear-gradient(135deg, #fff8ee 0%, #f8e8d8 100%);
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 22px 24px;
@@ -168,7 +168,7 @@ h1 {
   border-radius: 16px;
   padding: 16px 18px;
   text-align: center;
-  box-shadow: 0 12px 18px rgba(74, 42, 17, 0.06);
+  box-shadow: 0 12px 18px rgba(59, 42, 32, 0.06);
 }
 
 .hero-phone span {
@@ -194,19 +194,19 @@ h1 {
 }
 
 .product-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 248, 238, 0.9);
   border: 1px solid var(--border);
   border-radius: 22px;
   padding: 18px 18px 16px;
-  box-shadow: 0 12px 28px rgba(90, 58, 33, 0.06);
+  box-shadow: 0 12px 28px rgba(59, 42, 32, 0.06);
 }
 
 .product-card:nth-child(odd) {
-  background: linear-gradient(135deg, #fffdfb 0%, #fff7ef 100%);
+  background: linear-gradient(135deg, #fff8ee 0%, #fff1e2 100%);
 }
 
 .product-card:nth-child(even) {
-  background: linear-gradient(135deg, #fffdfb 0%, #f3f9f5 100%);
+  background: linear-gradient(135deg, #fff8ee 0%, #f8e8d8 100%);
 }
 
 .product-header {
@@ -228,7 +228,7 @@ h1 {
   align-items: center;
   justify-content: center;
   min-width: 92px;
-  background: #f4e7dd;
+  background: #f4a261;
   color: var(--orange-dark);
   border-radius: 999px;
   padding: 7px 10px;
@@ -271,19 +271,19 @@ h1 {
   width: 100%;
   text-align: center;
   text-decoration: none;
-  background: linear-gradient(135deg, var(--orange), #e28a46);
+  background: linear-gradient(135deg, var(--orange), #a93226);
   color: white;
   border-radius: 14px;
   padding: 12px 14px;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  box-shadow: 0 12px 20px rgba(214, 103, 45, 0.2);
+  box-shadow: 0 12px 20px rgba(192, 57, 43, 0.2);
 }
 
 .info-card {
   margin-top: 24px;
-  background: linear-gradient(135deg, #fffdfb 0%, #f5ead9 100%);
+  background: linear-gradient(135deg, #fff8ee 0%, #f8e8d8 100%);
   border: 1px solid var(--border);
   border-radius: 22px;
   padding: 22px 24px;
@@ -342,7 +342,7 @@ h1 {
 }
 
 .primary-btn {
-  background: #1d1c1b;
+  background: #3b2a20;
   color: #fff;
 }
 
