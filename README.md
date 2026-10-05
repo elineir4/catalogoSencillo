@@ -1,6 +1,6 @@
 # 🍗 Catálogo Sencillo
 
-Catálogo web simple para una rotisería, pensado **para usarse desde el celular**: muestra las pociones de comida y según la opción elegida aparece el catalogo, de forma clara y fácil de recorrer con el dedo.
+Catálogo web simple para una rotisería, pensado **para usarse desde el celular**: muestra las opciones de comida y según la opción elegida aparece el catalogo, de forma clara y fácil de recorrer con el dedo.
 
 ## ✨ Características
 
