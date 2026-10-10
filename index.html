@@ -15,269 +15,15 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..800&amp;family=Nunito:wght@400;500;600;700;800;900&amp;display=swap"
     rel="stylesheet" />
-  <style>
-    @layer base {
 
-      html,
-      body {
-        width: 100vw;
-        margin: 0;
-        padding: 0;
-        background-color: #fff8ee;
-      }
-
-      body {
-        overscroll-behavior: none;
-      }
-
-      .pb-safe {
-        padding-bottom: env(safe-area-inset-bottom, 0px);
-      }
-
-      .pt-safe {
-        padding-top: env(safe-area-inset-top, 0px);
-      }
-
-      main> :first-child {
-        margin-top: 0 !important;
-      }
-
-      main> :last-child {
-        margin-bottom: 0 !important;
-      }
-    }
-
-    body,
-    body *:not(.material-symbols-outlined) {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .material-symbols-outlined {
-      font-family: 'Material Symbols Outlined' !important;
-    }
-
-    .dish-item {
-      border: 1px solid #3b2a20;
-    }
-
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  </style>
-  <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com">  </script>
-  <style>
-    .bg-primary {
-      --tw-bg-opacity: 1;
-      background-color: #c0392b !important;
-    }
+  <link rel="stylesheet" href="styles.css" />
 
-    .ring-primary {
-      --tw-ring-color: #c0392b !important;
-    }
-
-    .text-primary {
-      color: #c0392b !important;
-    }
-
-    .text-on-primary,
-    .text-on-secondary {
-      color: #fff8ee !important;
-    }
-
-    .dish-item a.bg-secondary {
-      background-color: #128c4a !important;
-    }
-
-    .text-secondary {
-      color: #c0392b !important;
-    }
-
-    .bg-surface {
-      background-color: #fff8ee !important;
-    }
-
-    .bg-surface-container-low {
-      background-color: #f8e8d8 !important;
-    }
-
-    .bg-surface-container {
-      background-color: #f4a261 !important;
-    }
-
-    .bg-surface-container-lowest {
-      background-color: #fff8ee !important;
-    }
-
-    .bg-surface-container-highest {
-      background-color: #f4a261 !important;
-    }
-
-    .text-on-surface {
-      color: #3b2a20 !important;
-    }
-
-    .text-on-surface-variant {
-      color: #5d4638 !important;
-    }
-
-    body .brand-title {
-      color: #3b2a20 !important;
-      font-family: 'Fraunces', serif !important;
-      font-size: 1.5rem !important;
-      font-weight: 800 !important;
-      letter-spacing: -0.045em !important;
-      line-height: 1.1 !important;
-    }
-
-    body .menu-label {
-      color: #3b2a20 !important;
-      font-family: 'Fraunces', serif !important;
-      font-size: 0.9rem !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.16em !important;
-    }
-
-    .dish-item .text-headline-xl {
-      font-size: 1.75rem !important;
-      line-height: 1.15 !important;
-    }
-
-    .dish-item {
-      border-color: #f4a261;
-      box-shadow: 0 8px 24px rgba(59, 42, 32, 0.1);
-      transition: box-shadow 180ms ease;
-    }
-
-    #dish-list {
-      gap: 1.25rem !important;
-    }
-
-    .dish-item > .relative {
-      height: 10rem;
-      aspect-ratio: auto !important;
-    }
-
-    .dish-item > .p-space-md {
-      gap: 0.5rem !important;
-      padding: 1rem !important;
-    }
-
-    .dish-item h2 {
-      color: #3b2a20 !important;
-      font-family: 'Fraunces', serif !important;
-      font-size: 1.3rem !important;
-      letter-spacing: -0.025em;
-    }
-
-    .dish-item a.bg-secondary {
-      border-radius: 0.85rem;
-      font-size: 1.1rem !important;
-      transition: background-color 180ms ease, transform 180ms ease;
-    }
-
-    .dish-item a.bg-secondary:hover {
-      background-color: #0f713c !important;
-    }
-
-    .category-options {
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .category-option {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 9rem;
-      padding: 0;
-      overflow: hidden;
-      border: 1px solid rgba(59, 42, 32, 0.2);
-      border-radius: 1rem;
-      background: #3b2a20;
-      color: #fff;
-      box-shadow: 0 5px 16px rgba(59, 42, 32, 0.12);
-      cursor: pointer;
-      text-align: center;
-      transition: transform 180ms ease, box-shadow 180ms ease;
-    }
-
-    .category-option::after {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(25, 16, 9, 0.58), rgba(25, 16, 9, 0.16));
-      content: "";
-    }
-
-    .category-option img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    body .category-option-label {
-      z-index: 1;
-      color: #fff;
-      font-family: 'Fraunces', serif !important;
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-    }
-
-    .category-option:focus-visible,
-    .back-to-categories:focus-visible {
-      outline: 3px solid #c0392b;
-      outline-offset: 3px;
-    }
-
-    .back-to-categories {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      align-self: flex-start;
-      margin: 0.5rem 0 1rem;
-      padding: 0.55rem 0.75rem;
-      border: 0;
-      border-radius: 0.75rem;
-      background: #f4a261;
-      color: #3b2a20;
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    body .category-results-title {
-      margin: 0 0 1.25rem;
-      color: #3b2a20;
-      font-family: 'Fraunces', serif !important;
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    @media (hover: hover) {
-      .category-option:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 9px 22px rgba(59, 42, 32, 0.14);
-      }
-    }
-
-    @media (hover: hover) {
-      .dish-item:hover {
-        box-shadow: 0 12px 30px rgba(59, 42, 32, 0.15);
-      }
-    }
-  </style>
   <script id="tailwind-config">
     tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#8f6f6c", "on-secondary-fixed-variant": "#005323", "inverse-on-surface": "#f3f0f4", "surface-container-low": "#f6f2f7", "tertiary-fixed": "#ffdcc3", "inverse-primary": "#ffb4ab", "on-primary-fixed-variant": "#93000b", "surface-container-high": "#eae7eb", "on-error-container": "#93000a", "tertiary": "#6e3900", "outline-variant": "#e4beb9", "on-secondary": "#ffffff", "on-secondary-fixed": "#00210a", "surface-container": "#f0edf1", "secondary-container": "#92f5a4", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "on-surface-variant": "#5b403d", "background": "#fbf8fc", "error-container": "#ffdad6", "on-background": "#1b1b1e", "inverse-surface": "#303033", "primary-fixed": "#ffdad6", "primary": "#93000b", "surface-container-lowest": "#ffffff", "primary-container": "#b91c1c", "surface-bright": "#fbf8fc", "surface-dim": "#dcd9dd", "secondary-fixed": "#95f8a7", "on-error": "#ffffff", "secondary-fixed-dim": "#79db8d", "on-primary-fixed": "#410002", "surface": "#fbf8fc", "surface-container-highest": "#e4e1e6", "on-secondary-container": "#007233", "on-tertiary-fixed-variant": "#6e3900", "error": "#ba1a1a", "surface-tint": "#b91c1c", "on-primary-container": "#ffcdc7", "tertiary-fixed-dim": "#ffb77d", "on-tertiary-fixed": "#2f1500", "on-surface": "#1b1b1e", "on-tertiary-container": "#ffcfab", "secondary": "#006d30", "primary-fixed-dim": "#ffb4ab", "surface-variant": "#e4e1e6", "tertiary-container": "#904d00" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-mobile": "1rem", "space-lg": "1.75rem", "space-xs": "0.5rem", "margin-mobile": "1.25rem", "space-xl": "2.5rem", "gutter": "1.25rem", "space-md": "1.25rem", "margin": "1.5rem", "space-sm": "0.75rem" }, "fontFamily": { "body-xl": ["Atkinson Hyperlegible Next"], "headline-md": ["Epilogue"], "body-md": ["Atkinson Hyperlegible Next"], "headline-lg": ["Epilogue"], "label-xl": ["Atkinson Hyperlegible Next"], "headline-xl-mobile": ["Epilogue"], "label-md": ["Atkinson Hyperlegible Next"], "label-lg": ["Atkinson Hyperlegible Next"], "body-lg": ["Atkinson Hyperlegible Next"], "headline-xl": ["Epilogue"], "headline-lg-mobile": ["Epilogue"] }, "fontSize": { "body-xl": ["22px", { "lineHeight": "32px", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "700" }], "body-md": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "label-xl": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "label-md": ["17px", { "lineHeight": "24px", "fontWeight": "600" }], "label-lg": ["19px", { "lineHeight": "26px", "fontWeight": "700" }], "body-lg": ["20px", { "lineHeight": "30px", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };
   </script>
-  <header class="fixed top-0 w-full z-50 pt-safe" style="background-color: #fff8ee !important;">
-    <div class="px-margin-mobile flex items-center justify-between gap-space-xs py-space-xs max-w-lg mx-auto relative"
-      style="background-color: #fff8ee !important;">
+  <header class="fixed top-0 w-full z-50 pt-safe">
+    <div class="px-margin-mobile flex items-center justify-between gap-space-xs py-space-xs max-w-lg mx-auto relative">
       <div class="flex items-center gap-space-sm min-w-0">
         <img alt="Rotisería Doña Rosa Logo" class="h-12 w-auto object-contain shrink-0"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-QyVJ1wcRfGyf9pTBUQUFLwR0q6tIfG94voLhmRd0SuoTRpd7njpUQul7huzILhkxLKBzy_oGD_jYK5-rseEjTEg1MciEUAKBY3mbo2OWRjBLb9WkKdptc3TbUnZHJxToUdRKUvj_MgUtILEPKppm1dzTjGV13yjXo0afLgVklHNOB6tgiuaRS_W1su7enMWlpOML3LzwRkUTqaAm5J7QckX8J0XPS3Vtd7FE-PeYiooOxFuSLXxC" />
@@ -287,7 +33,13 @@
         </div>
       </div>
 
-      <span class="menu-label shrink-0 uppercase">MENU</span>
+      <div class="flex items-center gap-3 shrink-0">
+        <span class="menu-label uppercase">MENU</span>
+        <button aria-label="Abrir carrito, 0 productos, total $ 0" class="header-cart" id="cart-open" type="button">
+          <span aria-hidden="true" class="material-symbols-outlined">shopping_cart</span>
+          <span aria-hidden="true" class="header-cart-count" id="cart-count">0</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -325,7 +77,7 @@
         </button>
       </div>
     </section>
-    <div class="flex flex-col w-full hidden" id="magazine-container" style="font-size: 100%;">
+    <div class="flex flex-col w-full hidden" id="magazine-container">
       <button class="back-to-categories" type="button" onclick="volverCategorias()">
         <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
         Volver a las categorías
@@ -490,6 +242,21 @@
     </div>
   </main>
 
+  <dialog aria-labelledby="cart-title" class="cart-dialog" id="cart-dialog">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2 class="cart-title" id="cart-title">Tu carrito</h2>
+        <button aria-label="Cerrar carrito" class="cart-close" id="cart-close" type="button">×</button>
+      </div>
+      <div aria-live="polite" class="cart-items" id="cart-items"></div>
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total">$ 0</span>
+      </div>
+      <button class="cart-checkout" disabled id="cart-checkout" type="button">Enviar pedido por WhatsApp</button>
+    </div>
+  </dialog>
+
   <nav class="fixed bottom-0 w-full z-50 pb-safe bg-[#FFF8EE] backdrop-blur-xl shadow-[0_-4px_16px_rgba(59,42,32,0.14)]"
     data-active-classes="ring-2 ring-primary ring-offset-2">
     <div class="px-margin-mobile py-space-sm flex flex-col gap-space-xs max-w-lg mx-auto">
@@ -505,6 +272,7 @@
   </nav>
 
   <script src="script.js"></script>
+  <script src="carrito.js"></script>
   <script>
     // Ajusta el tamaño del contenido para mejorar la legibilidad en pantalla móvil.
     function ajustarEscalaFuente(escala) {

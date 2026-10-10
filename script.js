@@ -6,42 +6,53 @@ const productos = [
     etiqueta: 'Recomendado',
     descripcion: 'Mozzarella, salsa casera, aceitunas y orégano.',
     etiquetaPrecio: 'Precio total',
-    precio: '$ 8.500',
+    precio: 8500,
     categoria: 'pizzas',
+    id: 'pizza-mozzarella',
   },
   {
     titulo: 'Empanadas Caseras de Jamón y Queso (Docena)',
     etiqueta: 'Popular',
     descripcion: 'Rellenas de jamón y queso.',
     etiquetaPrecio: 'Precio docena',
-    precio: '$ 11.000',
+    precio: 11000,
     categoria: 'empanadas',
+    id: 'empanadas-docena',
   },
   {
     titulo: 'Lomito Completo Especial',
     etiqueta: 'Especial',
     descripcion: 'Bife a la plancha con jamón, queso, huevo y vegetales.',
     etiquetaPrecio: 'Precio total',
-    precio: '$ 9.200',
+    precio: 9200,
     categoria: 'lomitos',
+    id: 'lomito-completo',
   },
   {
     titulo: 'Pollo al Spiedo con Papas Rústicas',
     etiqueta: 'Casero',
     descripcion: 'Pollo dorado a fuego lento bien sazonado, acompañado con papas rústicas al romero.',
     etiquetaPrecio: 'Precio total',
-    precio: '$ 9.500',
+    precio: 9500,
     categoria: 'pollos',
+    id: 'pollo-spiedo',
   },
   {
     titulo: 'Milanesa Napolitana con Guarnición',
     etiqueta: 'Clásico',
     descripcion: 'Milanesa crocante con salsa, jamón, queso y papas fritas.',
     etiquetaPrecio: 'Precio total',
-    precio: '$ 7.800',
+    precio: 7800,
     categoria: 'minutas',
+    id: 'milanesa-napolitana',
   },
 ];
+
+const formatoPrecio = new Intl.NumberFormat('es-AR', { maximumFractionDigits: 0 });
+
+function mostrarPrecio(precio) {
+  return `$ ${formatoPrecio.format(precio)}`;
+}
 
 // Sincroniza los datos editables con las tarjetas ya diseñadas en la página.
 function actualizarCatalogo() {
@@ -61,7 +72,7 @@ function actualizarCatalogo() {
     if (titulo) titulo.textContent = producto.titulo;
     if (descripcion) descripcion.textContent = producto.descripcion;
     if (etiquetaPrecio) etiquetaPrecio.textContent = `${producto.etiquetaPrecio}:`;
-    if (precio) precio.textContent = producto.precio;
+    if (precio) precio.textContent = mostrarPrecio(producto.precio);
     if (imagen) imagen.alt = `Imagen de ${producto.titulo}`;
 
     tarjeta.dataset.category = producto.categoria;
@@ -79,10 +90,24 @@ function actualizarCatalogo() {
     const textoEtiqueta = franjaEtiqueta.querySelector('span');
     if (textoEtiqueta) textoEtiqueta.textContent = producto.etiqueta;
 
+    // El producto se agrega al carrito antes de enviar el pedido por WhatsApp.
     if (enlaceWhatsApp) {
-      const mensaje = `Hola, me gustaría pedir ${producto.titulo}. Precio: ${producto.precio}.`;
-      enlaceWhatsApp.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-      enlaceWhatsApp.setAttribute('aria-label', `Pedir ${producto.titulo} por WhatsApp`);
+      const botonAgregar = document.createElement('button');
+      botonAgregar.type = 'button';
+      botonAgregar.className = `${enlaceWhatsApp.className} cart-add-button`;
+      botonAgregar.dataset.productId = producto.id;
+      botonAgregar.setAttribute('aria-label', `Agregar ${producto.titulo} al carrito`);
+
+      const icono = document.createElement('span');
+      icono.className = 'material-symbols-outlined text-[30px]';
+      icono.setAttribute('aria-hidden', 'true');
+      icono.textContent = 'add_shopping_cart';
+
+      const texto = document.createElement('span');
+      texto.textContent = 'AGREGAR';
+
+      botonAgregar.append(icono, texto);
+      enlaceWhatsApp.replaceWith(botonAgregar);
     }
   });
 }
